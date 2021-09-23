@@ -38,4 +38,41 @@ public class MyLinkedList {
 		System.out.println(nodes);
 	}
 
+	public void append(INode newNode) {
+
+		if (this.head == null) {
+			this.head = newNode;
+		}
+		if (this.tail == null) {
+			this.tail = newNode;
+		} else {
+			this.tail.setNext(newNode);
+			this.tail = newNode;
+		}
+	}
+
+	public void insert(INode myNode, INode newNode) {
+		INode temp = myNode.getNext();
+		myNode.setNext(newNode);
+		newNode.setNext(temp);
+	}
+
+	/*
+	 * pop method will delete the first element in the linked list.
+	 */
+	public INode pop() {
+		INode node = this.head;
+		this.head = head.getNext();
+		return node;
+	}
+
+	public INode popLast() {
+		INode temp = head;
+		while (temp.getNext() != this.tail) {
+			temp = temp.getNext();
+		}
+		this.tail = temp;
+		temp = null;
+		return temp;
+	}
 }
