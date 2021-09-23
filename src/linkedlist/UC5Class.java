@@ -17,5 +17,6 @@ public class UC5Class {
 		myLinkList.pop();
 		myLinkList.printNode();
 
+		
 	}
 }
