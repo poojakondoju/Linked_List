@@ -10,6 +10,9 @@ public class MyLinkedList {
 		this.tail = null;
 	}
 
+	/*
+	 * Insert elements in reverse order
+	 */
 	public void add(INode node) {
 		if (this.head == null) {
 			this.head = node;
@@ -24,6 +27,9 @@ public class MyLinkedList {
 		}
 	}
 
+	/*
+	 * Printing the linked list elements
+	 */
 	public void printNode() {
 		StringBuilder nodes = new StringBuilder("Node keys: ");
 
@@ -38,6 +44,9 @@ public class MyLinkedList {
 		System.out.println(nodes);
 	}
 
+	/*
+	 * Insert elements in a order
+	 */
 	public void append(INode newNode) {
 
 		if (this.head == null) {
@@ -51,6 +60,9 @@ public class MyLinkedList {
 		}
 	}
 
+	/*
+	 * Insert elements in a order
+	 */
 	public void insert(INode myNode, INode newNode) {
 		INode temp = myNode.getNext();
 		myNode.setNext(newNode);
@@ -66,13 +78,4 @@ public class MyLinkedList {
 		return node;
 	}
 
-	public INode popLast() {
-		INode temp = head;
-		while (temp.getNext() != this.tail) {
-			temp = temp.getNext();
-		}
-		this.tail = temp;
-		temp = null;
-		return temp;
-	}
 }
